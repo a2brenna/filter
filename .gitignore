@@ -1,0 +1,4 @@
+filter
+*.a
+*.so
+*.o
