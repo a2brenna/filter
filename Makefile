@@ -12,7 +12,7 @@ install: all
 	mkdir -p ${DESTDIR}/${PREFIX}/include/sa/
 	mkdir -p ${DESTDIR}/${PREFIX}/lib/
 	mkdir -p ${DESTDIR}/${PREFIX}/bin/
-	cp src/median_filter.h ${DESTDIR}/${PREFIX}/sa/median_filter.h
+	cp src/median_filter.h ${DESTDIR}/${PREFIX}/include/sa/median_filter.h
 	cp filter ${DESTDIR}/${PREFIX}/bin/filter
 
 uninstall:
@@ -21,7 +21,7 @@ uninstall:
 	rm -r ${DESTDIR}/${PREFIX}/lib/libsafilter.a
 	rm ${DESTDIR}/${PREFIX}/bin/filter
 
-filter: median_filter.o
+filter: src/filter.cc median_filter.o
 	${CXX} ${CXXFLAGS} -o filter src/filter.cc median_filter.o -lboost_program_options
 
 median_filter.o: src/median_filter.cc src/median_filter.h
