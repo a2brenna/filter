@@ -14,8 +14,11 @@ class Median_Filter{
             assert(window_size > 1);
             _window_size = window_size;
         }
-        void append(T &new_val){
+        void append(const T &new_val){
             _data.push_back(new_val);
+            while(_data.size() < _window_size){
+                _data.push_back(new_val);
+            }
             while(_data.size() > _window_size){
                 _data.pop_front();
             }
