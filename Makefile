@@ -14,6 +14,8 @@ install: all
 	mkdir -p ${DESTDIR}/${PREFIX}/bin/
 	cp src/median_filter.h ${DESTDIR}/${PREFIX}/include/sa/median_filter.h
 	cp filter ${DESTDIR}/${PREFIX}/bin/filter
+	cp libsafilter.so ${DESTDIR}/${PREFIX}/lib/
+	cp libsafilter.a ${DESTDIR}/${PREFIX}/lib/
 
 uninstall:
 	rm -r ${DESTDIR}/${PREFIX}/include/sa/
